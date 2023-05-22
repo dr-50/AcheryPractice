@@ -1,17 +1,17 @@
 
 function targetDistance(min,max,numTarget){
+    yardList = document.getElementById('yardList')
+    if(yardList!=null){
+        clearYards()
+    }
+
     yardArray = []
     min=parseInt(document.getElementById('minDistance').value, 10);
     max=parseInt(document.getElementById('maxDistance').value, 10);
     numTarget=parseInt(document.getElementById('numTargets').value, 10);
-    console.log('function called')
-    console.log(typeof min)
-    console.log(max)
-    console.log(numTarget)
     for (let i=0; i<numTarget; i++)
     {
         num= Math.random()*(max-min)+min;
-        console.log(num.toFixed(1))
         yardArray.push(num.toFixed(1))
     }
 
@@ -21,8 +21,6 @@ function targetDistance(min,max,numTarget){
         li.innerText = yardArray[i];
         list.appendChild(li)
     }
-
-    console.log(yardArray)
 }
 
 
