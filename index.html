@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <H4>3D Yardage Generator</H4>
+    <div>
+        <label for="minDistance">Min Distance<span>(leave blank for 3 yard min)</span></label>
+        <input type="number" name="minDistance" id="minDistance">
+    </div>
+    <div>
+        <label for="maxDistance">Max Distance</label>
+        <input type="number" name="maxDistance" id="maxDistance">
+    </div>
+    <div>
+        <label for="numTargets">Number of Targets</label>
+        <input type="number" name="numTargets" id="numTargets">
+    </div>
+    <button onclick=targetDistance()>Generate Yardage</button>
+    <div class="yardage" id="yardage">
+        <ol class="yardList" id="yardList"></ol>
+    </div>
+
+</body>
+</html>
