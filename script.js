@@ -5,9 +5,7 @@ function targetDistance(min,max,numTarget){
     max=parseInt(document.getElementById('maxDistance').value, 10);
     numTarget=parseInt(document.getElementById('numTargets').value, 10);
     yardArray = []
-    console.log(min)
-    console.log(max)
-    console.log(numTarget)
+
 
 //Check if input fields contain values -- call missingFields function of one field is missing 
     if(document.getElementById('maxDistance').value=='' || document.getElementById('numTargets').value == ''){
@@ -27,12 +25,28 @@ function targetDistance(min,max,numTarget){
         num= Math.random()*(max-min)+min;
         yardArray.push(num.toFixed(1))
     }
+
+outputCol1 = (Math.ceil(yardArray.length/2))
+outputCol2 = (Math.floor(yardArray.length/2))
+console.log(outputCol1)
+console.log(outputCol2)
+console.log(yardArray)
+
 //append random number arry to Ordered List nodes 
     list=document.getElementById('yardList');
-    for (i=0; i<yardArray.length; i++){
+
+    for (i=0; i<outputCol1; i++){
         var li = document.createElement('li');
         li.innerText = yardArray[i];
         list.appendChild(li)
+    }
+
+    list2=document.getElementById('yardList2')
+    list2.start=outputCol2+1
+    for (i=outputCol1; i<yardArray.length; i++){
+        var li = document.createElement('li');
+        li.innerText = yardArray[i];
+        list2.appendChild(li)
     }
 }
 
@@ -40,6 +54,8 @@ function targetDistance(min,max,numTarget){
 function clearYards(){
     yardList = document.getElementById('yardList')
     yardList.innerHTML = '';
+    yardList2 = document.getElementById('yardList2')
+    yardList2.innerHTML = '';
 }
 
 //Format input fields to indicate missing value

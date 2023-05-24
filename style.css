@@ -1,3 +1,54 @@
 .error{
 border: solid; color: red;
 }
+.yard-generator{
+    background-color: #ecf0fe;
+    margin: auto;
+    width: 50%;
+    
+}
+.yard-buttons{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    
+}
+.yard-generator button{
+    width: fit-content;
+    padding: 6px;
+    background-color: #75ABDC;
+
+}
+.yard-generator h4{
+    width: fit-content;
+    padding: 5px;
+    border: 1px solid black;
+    box-shadow: 2px 3px 0 0 grey;
+    background-color: #75ABDC;
+}
+
+.yard-input{
+    margin: 5px auto; 
+    width: fit-content;
+    justify-content: left;
+}
+
+.yardage{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+vertical-align: middle;
+text-align: center;
+}
+
+.yardage ol{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#yardList2{
+    margin-left: 50px;
+}
+

@@ -1,32 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>ArcheryPractice🏹</title>
-</head>
-<body>
-    <H4>3D Yardage Generator</H4>
-    <div>
+  </head>
+  <body>
+    <section class="yard-generator">
+      <h4>3D Yardage Generator</h4>
+      <div class="yard-input">
         <label for="minDistance">Min Distance</label>
-        <input type="text" inputmode="numeric" name="minDistance" id="minDistance" value="20">
-    </div>
-    <div>
+        <input
+          type="text"
+          inputmode="numeric"
+          name="minDistance"
+          id="minDistance"
+          value="20"
+        />
+      </div>
+      <div class="yard-input">
         <label for="maxDistance">Max Distance</label>
-        <input type="text" inputmode="numeric" name="maxDistance" id="maxDistance" value="50">
-    </div>
-    <div>
+        <input
+          type="text"
+          inputmode="numeric"
+          name="maxDistance"
+          id="maxDistance"
+          value="50"
+        />
+      </div>
+      <div class="yard-input">
         <label for="numTargets">Number of Targets</label>
-        <input type="text" inputmode="numeric" name="numTargets" id="numTargets" value="20">
-    </div>
-    <button onclick=targetDistance()>Generate Yardage</button>
-    <button onclick=clearYards()>Clear Yardage</button>
-    <div class="yardage" id="yardage">
+        <input
+          type="text"
+          inputmode="numeric"
+          name="numTargets"
+          id="numTargets"
+          value="20"
+        />
+      </div>
+      <div class="yard-buttons">
+        <button onclick="targetDistance()">Generate Yards</button>
+        <!-- <button onclick="clearYards()">Clear Yardage</button> -->
+      </div>
+      <div class="yardage" id="yardage">
         <ol class="yardList" id="yardList"></ol>
-    </div>
+        <ol class="yardList" id="yardList2"></ol>
 
-</body>
+      </div>
+    </section>
+  </body>
 </html>
