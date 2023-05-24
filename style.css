@@ -5,7 +5,7 @@ border: solid; color: red;
     background-color: #ecf0fe;
     margin: auto;
     width: 50%;
-    
+    padding: 10px;
 }
 .yard-buttons{
     display: flex;
