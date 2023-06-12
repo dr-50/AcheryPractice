@@ -1,10 +1,12 @@
 
+
 function targetDistance(min,max,numTarget){
-    console.log('called')
+    yardArray = []
     min=parseInt(document.getElementById('minDistance').value, 10);
     max=parseInt(document.getElementById('maxDistance').value, 10);
     numTarget=parseInt(document.getElementById('numTargets').value, 10);
-    yardArray = []
+    list=document.getElementById('yardList');
+    console.log('called')
 
 
 //Check if input fields contain values -- call missingFields function of one field is missing 
@@ -13,11 +15,8 @@ function targetDistance(min,max,numTarget){
     } else {
         resetFieldsMissing()
     }
-//Check if generated yard list already exists on the screen -- call clearYards if true
-    yardList = document.getElementById('yardList')
-    if(yardList!=null){
-        clearYards()
-    }
+
+    clearYards()
 
 //Generate random numbers and push to array
     for (let i=0; i<numTarget; i++)
@@ -28,34 +27,47 @@ function targetDistance(min,max,numTarget){
 
 outputCol1 = (Math.ceil(yardArray.length/2))
 outputCol2 = (Math.floor(yardArray.length/2))
-console.log(outputCol1)
-console.log(outputCol2)
-console.log(yardArray)
+
 
 //append random number arry to Ordered List nodes 
-    list=document.getElementById('yardList');
+    textBox = document.createElement('input');
+    tbl = document.getElementById('yardTable');
 
-    for (i=0; i<outputCol1; i++){
-        var li = document.createElement('li');
-        li.innerText = yardArray[i];
-        list.appendChild(li)
-    }
+    var cHeader = tbl.createTHead();
+    var row = cHeader.insertRow(0);
+    var cell3 = row.insertCell(0);
+    cell3.innerHTML = 'Score'
+    var cell2 = row.insertCell(0);
+    cell2.innerHTML = 'Yardage'
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = 'Target #'
 
-    list2=document.getElementById('yardList2')
-    list2.start=outputCol2+1
-    for (i=outputCol1; i<yardArray.length; i++){
-        var li = document.createElement('li');
-        li.innerText = yardArray[i];
-        list2.appendChild(li)
+    //create rows
+
+    for(i=0; i<yardArray.length; i++){
+        var row = document.createElement('tr');
+        // create columns
+            var cell1 = document.createElement('td')
+            cell1.textContent = i+1+".";
+            row.appendChild(cell1)
+            var cell2 = document.createElement('td')
+            cell2.textContent = yardArray[i];
+            row.appendChild(cell2)
+            var cell3 = document.createElement('td')
+            cell3.appendChild(document.createElement('input'))
+            row.appendChild(cell3);
+
+
+            tbl.appendChild(row)
     }
 }
 
+
 //remove existing generated yard list
 function clearYards(){
-    yardList = document.getElementById('yardList')
-    yardList.innerHTML = '';
-    yardList2 = document.getElementById('yardList2')
-    yardList2.innerHTML = '';
+
+    var table = document.getElementById('yardTable');
+    table.innerHTML=''
 }
 
 //Format input fields to indicate missing value
@@ -75,3 +87,7 @@ function resetFieldsMissing(){
     document.getElementById('numTargets').className = document.getElementById('numTargets').className.replace('error', '')     
 
 }
+
+
+
+
