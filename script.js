@@ -6,7 +6,6 @@ function targetDistance(min,max,numTarget){
     max=parseInt(document.getElementById('maxDistance').value, 10);
     numTarget=parseInt(document.getElementById('numTargets').value, 10);
     list=document.getElementById('yardList');
-    console.log('called')
 
 
 //Check if input fields contain values -- call missingFields function of one field is missing 
@@ -55,7 +54,6 @@ outputCol2 = (Math.floor(yardArray.length/2))
             row.appendChild(cell2)
             var cell3 = document.createElement('td')
             var textBox = document.createElement('input');
-            textBox.setAttribute('type', 'text')
             textBox.setAttribute('inputmode', 'numeric')
             cell3.appendChild(document.createElement('input'))
             row.appendChild(cell3);
