@@ -29,7 +29,7 @@ outputCol2 = (Math.floor(yardArray.length/2))
 
 
 //append random number arry to Ordered List nodes 
-    textBox = document.createElement('input');
+
     tbl = document.getElementById('yardTable');
 
     var cHeader = tbl.createTHead();
@@ -49,15 +49,31 @@ outputCol2 = (Math.floor(yardArray.length/2))
             var cell1 = document.createElement('td')
             cell1.textContent = i+1+".";
             row.appendChild(cell1)
+
             var cell2 = document.createElement('td')
             cell2.textContent = yardArray[i];
             row.appendChild(cell2)
+
             var cell3 = document.createElement('td')
             var textBox = document.createElement('input');
+            textBox.value = '10'
             textBox.setAttribute('inputmode', 'numeric')
-            cell3.appendChild(document.createElement('input'))
+            cell3.appendChild(textBox)
             row.appendChild(cell3);
 
+            var cell4 = document.createElement('td');
+            var minusBtn = document.createElement('button');
+            minusBtn.setAttribute('onclick', 'minusScore(this)')
+            minusBtn.innerHTML = '-'
+            cell4.appendChild(minusBtn);
+            row.appendChild(cell4)
+
+            var cell5 = document.createElement('td');
+            var plusBtn = document.createElement('button');
+            plusBtn.setAttribute('onclick', 'plusScore(this)');
+            plusBtn.innerHTML = '+'
+            cell5.appendChild(plusBtn);
+            row.appendChild(cell5);
 
             tbl.appendChild(row)
     }
@@ -89,6 +105,69 @@ function resetFieldsMissing(){
 
 }
 
+function minusScore(element){
+    // alert('row ' + element.parentNode.parentNode.rowIndex)
+    console.log('row ' + element.parentNode.parentNode.rowIndex);
 
+    // get row number of button clicked
+    var rowNum = element.parentNode.parentNode.rowIndex;
+    cell = document.getElementById('yardTable').rows[rowNum].cells;
+    // console.log(cell[2].innerHTML)
+    // cell[2].value='8'
 
+    inputValue = document.getElementById('yardTable').rows[rowNum].cells[2].getElementsByTagName('input')[0]//.value
+    // console.log('input value: ' + inputValue)
+    switch(inputValue.value){
+        case '10':
+            inputValue.value='8';
+            break;
+        case '8': 
+            inputValue.value='5';
+            break;
+        case '5':
+            inputValue.value='0';
+            break;
+        case '0': 
+            inputValue.value='0';
+            break;
+        case '14':
+            inputValue.value='12';
+            break
+        case '12':
+            inputValue.value='10';
+        
+    }
+    // inputValue.value='8'
+}
+
+function plusScore(element){
+    // alert('row ' + element.parentNode.parentNode.rowIndex)
+
+    var rowNum = element.parentNode.parentNode.rowIndex;
+    cell = document.getElementById('yardTable').rows[rowNum].cells;
+    // console.log(cell[2].innerHTML)
+
+    inputValue = document.getElementById('yardTable').rows[rowNum].cells[2].getElementsByTagName('input')[0]//.value
+
+    switch(inputValue.value){
+        case '10':
+            inputValue.value='12';
+            break;
+        case '8': 
+            inputValue.value='10';
+            break;
+        case '5':
+            inputValue.value='8';
+            break;
+        case '0': 
+            inputValue.value='5';
+            break;
+        case '12':
+            inputValue.value='14';
+            break;
+        case '14':
+            inputValue.value='14';
+        
+    }
+}
 
