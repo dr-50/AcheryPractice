@@ -54,6 +54,9 @@ outputCol2 = (Math.floor(yardArray.length/2))
             cell2.textContent = yardArray[i];
             row.appendChild(cell2)
             var cell3 = document.createElement('td')
+            var textBox = document.createElement('input');
+            textBox.setAttribute('type', 'text')
+            textBox.setAttribute('inputmode', 'numeric')
             cell3.appendChild(document.createElement('input'))
             row.appendChild(cell3);
 
