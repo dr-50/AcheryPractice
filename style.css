@@ -54,8 +54,16 @@ text-align: center;
 
 .yardTable{
     margin-top: 10px;
+    font-size: large;
 }
 
 .yardTable input {
     width: 20px;
+}
+
+.yardTable button{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
 }
